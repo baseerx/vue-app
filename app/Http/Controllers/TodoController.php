@@ -15,7 +15,8 @@ class TodoController extends Controller
      */
     public function index()
     {
-        $task=Todo::paginate();
+        $task=Todo::paginate(1);
+        return $task;
         return request()->json(200,$task);
     }
 

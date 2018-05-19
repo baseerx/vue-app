@@ -37,9 +37,8 @@
                     page=1;
                 }
                 axios.get('http://127.0.0.1:8000/tasks?page=' + page)
-                    .then(response => {
-                        this.laravelData = response.data;
-                    });
+                    .then((response) => this.tasks=response.data)
+                    .catch((error)=>console.log(error));
             }
         },
         created()

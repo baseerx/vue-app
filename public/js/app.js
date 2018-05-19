@@ -16992,7 +16992,7 @@ exports = module.exports = __webpack_require__(25)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -17386,7 +17386,9 @@ Vue.component('pagination', __webpack_require__(60));
                 page = 1;
             }
             axios.get('http://127.0.0.1:8000/tasks?page=' + page).then(function (response) {
-                _this.laravelData = response.data;
+                return _this.tasks = response.data;
+            }).catch(function (error) {
+                return console.log(error);
             });
         }
     },
