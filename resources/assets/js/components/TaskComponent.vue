@@ -12,7 +12,7 @@
                                <span><button class="btn btn-sm float-xl-right ml-lg-3 btn-danger">delete</button><button class="btn-dark btn btn-sm float-xl-right ml-lg-3">Edit</button><button class="btn-info btn btn-sm float-xl-right ml-lg-3">View</button></span>
                            </li>
                        </ul>
-                        <pagination :data="tasks" v-on:pagination-change-page="getResults"></pagination>
+                        <pagination :data="tasks" @pagination-change-page="getResults"></pagination>
                     </div>
                 </div>
             </div>
@@ -21,6 +21,7 @@
 </template>
 
 <script>
+    // Problem is here by adding this below line
     Vue.component('pagination', require('laravel-vue-pagination'));
     export default {
         data()
