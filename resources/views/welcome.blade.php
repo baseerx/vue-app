@@ -15,11 +15,16 @@
     </head>
     <body>
      <div id="app">
-         <nav class="nav nav-tabs|pills mr-auto nav-stacked float-lg-right">
+         {{--<nav class="nav nav-tabs|pills mr-auto nav-stacked float-lg-right">--}}
+             {{--<router-link to="/example" class="nav-link">Example</router-link>--}}
+             {{--<router-link to="/user" class="nav-link">User</router-link>--}}
+         {{--</nav>--}}
+
+         <nav class="nav nav-tabs|pills nav-stacked">
              <router-link to="/example" class="nav-link">Example</router-link>
              <router-link to="/user" class="nav-link">User</router-link>
          </nav>
-         <div class="container">
+         <div class="container mt-4">
              {{--<example-component></example-component>--}}
              <router-view></router-view>
          </div>

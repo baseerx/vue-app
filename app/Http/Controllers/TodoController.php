@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\TodoRequest;
 use App\Todo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class TodoController extends Controller
 {
@@ -15,7 +16,7 @@ class TodoController extends Controller
      */
     public function index()
     {
-        $task=Todo::paginate(2);
+        $task=Todo::paginate(3);
         return request()->json(200,$task);
     }
 
@@ -35,9 +36,15 @@ class TodoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(TodoRequest $request)
+    public function store(Request $request)
     {
-        //
+        Log::info($request->all());
+        $todo=Todo::create($request->all());
+        if ($todo)
+        {
+            $task=Todo::paginate(3);
+            return request()->json(200,$task);
+        }
     }
 
     /**

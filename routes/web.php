@@ -18,3 +18,7 @@ Route::get('/',function ()
 Route::get('/test','testing@index');
 
 Route::resource('tasks','TodoController');
+Route::get('/{name}',function ()
+{
+   return view('welcome');
+});

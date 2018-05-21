@@ -20,6 +20,7 @@
     "vue": "^2.5.7"
   },
   "dependencies": {
+    "bulma": "^0.7.1",
     "font-awesome": "^4.7.0",
     "laravel-vue-pagination": "^1.2.0"
   }

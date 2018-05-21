@@ -1,5 +1,6 @@
 import router from './routes.js';
 import Vue from 'vue';
+
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -19,6 +20,8 @@ Vue.use(VueRouter)
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('pagination', require('laravel-vue-pagination'));
+Vue.component('addtask', require('./components/addModalComponent'));
 
 const app = new Vue({
     el: '#app',
