@@ -6,6 +6,7 @@ use App\Http\Requests\TodoRequest;
 use App\Todo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Redirect;
 
 class TodoController extends Controller
 {
@@ -36,7 +37,7 @@ class TodoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TodoRequest $request)
     {
         Log::info($request->all());
         $todo=Todo::create($request->all());
@@ -53,9 +54,10 @@ class TodoController extends Controller
      * @param  \App\Todo  $todo
      * @return \Illuminate\Http\Response
      */
-    public function show(Todo $todo)
+    public function show(Todo $todo,$task)
     {
-        //
+                    $data=Todo::find($task);
+                    return $data;
     }
 
     /**
@@ -66,7 +68,9 @@ class TodoController extends Controller
      */
     public function edit(Todo $todo)
     {
-        //
+//        Log::info("you are in");
+//        $val=Todo::updated($task);
+//        return $val;
     }
 
     /**
@@ -76,9 +80,15 @@ class TodoController extends Controller
      * @param  \App\Todo  $todo
      * @return \Illuminate\Http\Response
      */
-    public function update(TodoRequest $request, Todo $todo)
+    public function update(TodoRequest $request, $task)
     {
-        //
+        $var = Todo::find($task);
+
+            Log::info($task);
+
+          $var->name = $request->input('name');
+             $var->save();
+        return $this->_result();
     }
 
     /**
@@ -87,8 +97,17 @@ class TodoController extends Controller
      * @param  \App\Todo  $todo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Todo $todo)
+    public function destroy(Todo $todo,$task)
     {
-        //
+             $id=Todo::find($task);
+        if ( $id->destroy($task))
+            return $this->_result();
+        else
+            response()->json(425,['delete'=>'unable to delete']);
+    }
+    public function _result()
+    {
+        $task=Todo::paginate(3);
+        return request()->json(200,$task);
     }
 }

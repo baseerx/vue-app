@@ -22,6 +22,8 @@ Vue.use(VueRouter)
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('pagination', require('laravel-vue-pagination'));
 Vue.component('addtask', require('./components/addModalComponent'));
+Vue.component('viewmodal', require('./components/ViewModal'));
+Vue.component('updatemodal', require('./components/UpdateComponent'));
 
 const app = new Vue({
     el: '#app',

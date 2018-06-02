@@ -9,7 +9,7 @@
                        <ul class="list-group">
                            <li class="list-group-item" v-for="t in tasks.data">
                               {{t.id}} &nbsp; {{t.name}}
-                               <span><button class="btn btn-sm float-xl-right ml-lg-3 btn-danger">delete</button><button class="btn-dark btn btn-sm float-xl-right ml-lg-3">Edit</button><button class="btn-info btn btn-sm float-xl-right ml-lg-3">View</button></span>
+                               <span><button class="btn btn-sm float-xl-right ml-lg-3 btn-danger" @click="deleteme(t.id)">delete</button><a class="btn-dark btn btn-sm float-xl-right ml-lg-3" href="#updatemodal" data-toggle="modal" @click="updatebtn(t)">Edit</a><a class="btn-info btn btn-sm float-xl-right ml-lg-3" href="#viewmodal" data-toggle="modal" @click="viewshow(t)">View</a></span>
                            </li>
                        </ul>
                         <pagination :data="tasks" class="mt-2 pagination" @pagination-change-page="getResults"></pagination>
@@ -19,6 +19,8 @@
         </div>
         <div id="modal">
             <addtask @value="taskcalled"></addtask>
+            <viewmodal :sendId="showActive"></viewmodal>
+            <updatemodal :sendId="updateActive"></updatemodal>
         </div>
     </div>
 </template>
@@ -31,6 +33,9 @@
         {
             return {
                 tasks:{},
+                showActive:0,
+                updateActive:0,
+
             }
         },
         mounted()
@@ -52,6 +57,37 @@
             {
                 this.tasks=data.data
 
+            },
+            viewshow(val)
+            {
+                   this.showActive=val//        Log::info("you are in");
+;
+            },
+            updatebtn(id)
+            {
+                this.updateActive=id;
+            },
+            close()
+            {
+                this.updateActive='';
+            },
+            deleteme(id)
+            {
+                const reply=confirm("are you sure? you want to delete this record");
+                if (reply)
+                {
+                    axios.delete('http://127.0.0.1:8000/tasks/'+id,{
+                        id:id,
+
+
+                    })
+                        .then((response)=>{
+                            console.log(response.data);
+                        })
+                        .catch((error)=>console.log(error));
+                }
+
+                location.reload();
             }
         },
         created()
