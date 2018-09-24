@@ -247,8 +247,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="129" />
-    <option name="y" value="539" />
+    <option name="x" value="416" />
+    <option name="y" value="181" />
     <option name="width" value="1356" />
     <option name="height" value="513" />
   </component>
@@ -369,17 +369,17 @@
       <workItem from="1527931328800" duration="8376000" />
       <workItem from="1528645125513" duration="598000" />
       <workItem from="1531047247800" duration="52000" />
-      <workItem from="1537808014835" duration="594000" />
+      <workItem from="1537808014835" duration="880000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74028000" />
+    <option name="totallyTimeSpent" value="74314000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1366" height="686" extended-state="6" />
+    <frame x="416" y="181" width="1356" height="513" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16287878" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16412213" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -392,7 +392,7 @@
       <window_info anchor="bottom" id="Docker" order="7" weight="0.3283582" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="eSnippet Pro" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4978038" visible="true" weight="0.27877697" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4978038" visible="true" weight="0.40469974" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5021962" side_tool="true" weight="0.2768166" />
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
