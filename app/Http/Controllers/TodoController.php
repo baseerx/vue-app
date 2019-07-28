@@ -39,7 +39,7 @@ class TodoController extends Controller
      */
     public function store(TodoRequest $request)
     {
-        Log::info($request->all());
+       
         $todo=Todo::create($request->all());
         if ($todo)
         {
